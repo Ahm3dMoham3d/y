@@ -1,0 +1,422 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: linear-gradient(135deg, #ffd1dc, #ffb6c1);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #ff69b4;
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.bear-container {
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bear {
+  width: 200px;
+  height: 200px;
+  background: #8b4513;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  animation: bounce 2s infinite;
+}
+
+.bear-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bear-ears {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #8b4513;
+  border-radius: 50%;
+  top: -20px;
+}
+
+.bear-ears:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #8b4513;
+  border-radius: 50%;
+  right: -80px;
+}
+
+.bear-eyes {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #000;
+  border-radius: 50%;
+  top: 40%;
+  left: 30%;
+}
+
+.bear-eyes:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #000;
+  border-radius: 50%;
+  right: -60px;
+}
+
+.bear-nose {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background: #000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bear-mouth {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  border: 3px solid #000;
+  border-radius: 0 0 20px 20px;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.message {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem 2.5rem;
+  border-radius: 20px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message p {
+  font-family: "Open Sans", sans-serif;
+  color: #ff69b4;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.heart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #ff69b4;
+  transform: rotate(45deg);
+  animation: heartbeat 1.5s infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #ff69b4;
+  border-radius: 50%;
+}
+
+.heart:before {
+  left: -15px;
+}
+
+.heart:after {
+  top: -15px;
+}
+
+.floating-hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+.bear-arms {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.bear-arm {
+  position: absolute;
+  width: 40px;
+  height: 100px;
+  background: #8b4513;
+  border-radius: 20px;
+  top: 50%;
+}
+
+.bear-arm.left {
+  left: -60px;
+  transform: rotate(-30deg);
+  animation: waveLeft 2s infinite;
+}
+
+.bear-arm.right {
+  right: -60px;
+  transform: rotate(30deg);
+  animation: waveRight 2s infinite;
+}
+
+.rose {
+  position: absolute;
+  top: -40px;
+  width: 30px;
+  height: 30px;
+}
+
+.left-rose {
+  left: -10px;
+  transform: rotate(-45deg);
+}
+
+.right-rose {
+  right: -10px;
+  transform: rotate(45deg);
+}
+
+.rose-petal {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff1493;
+  border-radius: 50% 0 50% 50%;
+  transform-origin: bottom right;
+}
+
+.rose-petal:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.rose-petal:nth-child(2) {
+  transform: rotate(120deg);
+}
+
+.rose-petal:nth-child(3) {
+  transform: rotate(240deg);
+}
+
+.rose-stem {
+  position: absolute;
+  width: 4px;
+  height: 40px;
+  background: #228b22;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes waveLeft {
+  0%,
+  100% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes waveRight {
+  0%,
+  100% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes floatPetal {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100px, -200px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bear {
+    width: 150px;
+    height: 150px;
+  }
+
+  .bear-ears {
+    width: 45px;
+    height: 45px;
+  }
+
+  .bear-ears:before {
+    width: 45px;
+    height: 45px;
+    right: -60px;
+  }
+
+  .bear-eyes {
+    width: 15px;
+    height: 15px;
+  }
+
+  .bear-eyes:after {
+    width: 15px;
+    height: 15px;
+    right: -45px;
+  }
+
+  .bear-nose {
+    width: 20px;
+    height: 15px;
+  }
+
+  .bear-mouth {
+    width: 30px;
+    height: 15px;
+  }
+
+  .bear-arm {
+    width: 30px;
+    height: 80px;
+  }
+
+  .bear-arm.left {
+    left: -45px;
+  }
+
+  .bear-arm.right {
+    right: -45px;
+  }
+
+  .rose {
+    width: 25px;
+    height: 25px;
+  }
+
+  .rose-petal {
+    width: 15px;
+    height: 15px;
+  }
+
+  .rose-stem {
+    height: 30px;
+  }
+
+  .message {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .message p {
+    font-size: 1.4rem;
+  }
+
+  .heart {
+    width: 20px;
+    height: 20px;
+  }
+
+  .heart:before,
+  .heart:after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .heart:before {
+    left: -10px;
+  }
+
+  .heart:after {
+    top: -10px;
+  }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .bear {
+    width: 120px;
+    height: 120px;
+  }
+
+  .message p {
+    font-size: 1.2rem;
+  }
+}
